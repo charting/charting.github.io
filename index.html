@@ -21,7 +21,7 @@ body {
   padding-top: 70px;
 }
 
-#canvas-container {
+.canvas-container {
    width: 100%;
    text-align:center;
 }
@@ -109,6 +109,7 @@ div {
 			animate();
 			function init() {
 				container = document.createElement( 'div' );
+				container.className = "canvas-container";
 				document.body.appendChild( container );
 				camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 2000 );
 				camera.position.z = 1000;
@@ -164,7 +165,7 @@ div {
 				windowHalfY = window.innerHeight / 2;
 				camera.aspect = window.innerWidth / window.innerHeight;
 				camera.updateProjectionMatrix();
-				renderer.setSize( window.innerWidth, window.innerHeight );
+				renderer.setSize( window.innerWidth / 2, window.innerHeight / 2);
 			}
 			function onDocumentMouseMove( event ) {
 				mouseX = event.clientX - windowHalfX;
